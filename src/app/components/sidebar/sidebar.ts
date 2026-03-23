@@ -28,4 +28,8 @@ export class Sidebar {
 toggleMenu() {
   this.isMenuOpen = !this.isMenuOpen;
 }
+
+closeMenu() {
+  this.isMenuOpen = false;
+}
 }
