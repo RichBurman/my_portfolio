@@ -144,3 +144,13 @@
     color: var(--text-primary);
   }
 }
+
+@media (max-width: 768px) {
+  .projects-card {
+    padding: 24px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

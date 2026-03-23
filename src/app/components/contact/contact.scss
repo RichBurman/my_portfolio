@@ -78,3 +78,13 @@
     transform: translateY(-1px);
   }
 }
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 24px;
+  }
+
+  .contact-links {
+    flex-direction: column;
+  }
+}

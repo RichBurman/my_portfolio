@@ -169,3 +169,41 @@
   color: var(--text-muted);
   line-height: 1.5;
 }
+
+@media (max-width: 768px) {
+  .hero-card {
+    padding: 24px 24px 0;
+  }
+
+  .hero-top {
+    flex-direction: column-reverse;
+    gap: 16px;
+  }
+
+  .avatar-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero-name {
+    font-size: 2rem;
+  }
+
+  .hero-bio {
+    max-width: 100%;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    margin: 0 -24px;
+  }
+
+  .stat {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

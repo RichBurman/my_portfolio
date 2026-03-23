@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.scss',
 })
 export class Sidebar {
+
+  isMenuOpen = false;
+
   name = 'Richard Burman';
   role = 'Software Engineer';
 
@@ -21,4 +24,8 @@ export class Sidebar {
   { label: 'GitHub',   href: 'https://github.com/RichBurman' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/richard-burman123' },
 ];
+
+toggleMenu() {
+  this.isMenuOpen = !this.isMenuOpen;
+}
 }
