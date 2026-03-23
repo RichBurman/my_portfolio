@@ -32,3 +32,45 @@
   font-size: 0.75rem;
   color: var(--text-muted);
 }
+
+.sidebar__divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+  
+  .sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+
+  span {
+    flex: 1;
+  }
+  &:hover {
+    background: var(--surface-alt);
+    color: var(--text-primary);
+  }
+
+    &--active {
+    background: #f0f0ee;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+}

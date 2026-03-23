@@ -12,9 +12,9 @@ export class Sidebar {
 
   navLinks = [
     { label: 'Home', icon: 'home', href: '#home', active: true},
-    { label: 'About', icon: 'person', href: '#about', active: false},
+    { label: 'About', icon: 'user', href: '#about', active: false},
     { label: 'Projects', icon: 'folder', href: '#projects', active: false},
-    { label: 'Contact', icon: 'email', href: '#contact', active: false},
+    { label: 'Contact', icon: 'mail', href: '#contact', active: false},
   ];
 
   socialLinks = [
