@@ -46,4 +46,21 @@
         </a>
         }
     </nav>
+
+    <div class="sidebar_divider"></div>
+
+    <div class="sidebar_section-label">Connect</div>
+
+    <div class="sidebar_social">
+        @for (link of socialLinks; track link.label) {
+        <a [href]="link.href" target="_blank" class="social-item">
+            <span>{{ link.label }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 7h10v10" />
+                <path d="M7 17 17 7" />
+            </svg>
+        </a>
+        }
+    </div>
 </div>

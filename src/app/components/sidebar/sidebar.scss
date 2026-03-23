@@ -1,3 +1,10 @@
+.sidebar {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+}
+
 .avatar {
   width: 42px;
   height: 42px;
@@ -72,5 +79,39 @@
     background: #f0f0ee;
     color: var(--text-primary);
     font-weight: 600;
+  }
+}
+
+.sidebar__section-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 12px 10px 6px;
+}
+
+.sidebar__social {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 4px;
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+  text-decoration: none;
+
+  &:hover {
+    background: var(--surface-alt);
+    color: var(--text-primary);
   }
 }
