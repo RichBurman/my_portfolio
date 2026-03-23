@@ -1,0 +1,60 @@
+<section class="about-card" id="about">
+
+  <h2 class="section-title">About Me</h2>
+
+  <div class="about-bio">
+    <p>
+      <strong>Frontend Developer</strong> with <strong>2 years</strong> of commercial experience building
+      <strong>Angular</strong> applications in production. My background in education gave me an edge in
+      communication and breaking down complexity — skills that transfer directly into writing clean,
+      readable code and working effectively in agile teams.
+    </p>
+    <p>
+      At <strong>Harper James</strong> I delivered user-facing dashboards, invoicing interfaces, and
+      data-driven features — working with real TypeScript, REST APIs, and production codebases from day one.
+    </p>
+    <p>
+      I care about clean, maintainable code and UIs that feel intuitive. Currently seeking
+      my next frontend or full-stack role —
+      <a href="mailto:rich226402@gmail.com?subject=Frontend%20Developer%20Opportunity">get in touch</a>.
+    </p>
+  </div>
+
+  <div class="about-grid">
+
+    <div>
+      <h3 class="subsection-title">Technical Skills</h3>
+      <div class="skill-groups">
+        @for (group of skills; track group.category) {
+          <div class="skill-group">
+            <span class="skill-category">{{ group.category }}</span>
+            <div class="chip-row">
+              @for (item of group.items; track item) {
+                <span class="chip">{{ item }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div>
+      <h3 class="subsection-title">Certifications</h3>
+      <div class="cert-list">
+        @for (cert of certifications; track cert.name) {
+          <div class="cert-item">
+            <div class="cert-star">
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div>
+              <div class="cert-name">{{ cert.name }}</div>
+              <div class="cert-issuer">{{ cert.issuer }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
+
+</section>
