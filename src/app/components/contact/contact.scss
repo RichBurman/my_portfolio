@@ -1,0 +1,80 @@
+.contact-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 36px 40px 40px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.email-box {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 40px 24px;
+  text-decoration: none;
+  transition: all var(--transition);
+  margin-bottom: 16px;
+
+  &:hover {
+    border-color: #c0c0bc;
+    background: var(--surface-alt);
+  }
+}
+
+.email-box__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-primary);
+}
+
+.email-box__address {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--transition);
+}
+
+.contact-links {
+  display: flex;
+  gap: 10px;
+}
+
+.contact-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition);
+
+  &:hover {
+    background: var(--text-primary);
+    color: #fff;
+    border-color: var(--text-primary);
+    transform: translateY(-1px);
+  }
+}
