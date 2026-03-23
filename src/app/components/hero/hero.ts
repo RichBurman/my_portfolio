@@ -15,7 +15,7 @@ export class Hero {
 
 
   stats = [
-    { value: '2+', label: 'Years of commercial experience', detail: 'Production Angular apps at Harper James' },
+    { value: '2+', label: 'Years of commercial experience', detail: 'Production Angular apps in a legal tech environment' },
     { value: 'Angular', label: 'Certified Developer', detail: 'Verified by Certificate.dev + 2 Azure certs' },
     { value: 'Full-Stack', label: 'Angular · TypeScript', detail: 'Python & Django on the backend' },
   ];
