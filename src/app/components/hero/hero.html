@@ -1,0 +1,46 @@
+<section class="hero-card" id="home">
+    <div class="hero-status">
+        @if (isOpenToWork) {
+            <span class="status-badge">
+                <span class="status-dot"></span>
+                Open to opportunities
+            </span>
+        }
+        <span class="status-date">as of {{ currentDate }}</span>
+    </div>
+
+     <div class="hero-top">
+    <div class="hero-text">
+      <h1 class="hero-name">Hey, I'm Richard</h1>
+      <p class="hero-title">Frontend Developer &amp; Angular Specialist</p>
+      <p class="hero-bio">
+        Based in the UK with 2 years of commercial experience building Angular
+        applications in production. Passionate about clean code, great UI,
+        and shipping things that matter.
+      </p>
+
+      <div class="hero-actions">
+        <a [href]="'mailto:' + email + '?subject=Frontend%20Developer%20Opportunity'" class="btn btn-primary">
+          Contact Me
+        </a>
+        <a [href]="githubUrl" target="_blank" class="btn btn-secondary">
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-avatar">
+      <img src="richard.jpeg" alt="Richard Burman" class="avatar-circle" />
+    </div>
+  </div>
+
+    <div class="hero-stats">
+    @for (stat of stats; track stat.label) {
+      <div class="stat">
+        <span class="stat-value">{{ stat.value }}</span>
+        <span class="stat-label">{{ stat.label }}</span>
+        <span class="stat-detail">{{ stat.detail }}</span>
+      </div>
+    }
+  </div>
+</section>
