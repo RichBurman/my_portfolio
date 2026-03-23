@@ -1,64 +1,108 @@
 <div class="sidebar">
 
-  <div class="sidebar__profile">
-    <img src="richard.jpeg" alt="Richard Burman" class="avatar" />
-    <div class="profile-info">
-      <span class="profile-name">{{ name }}</span>
-      <span class="profile-role">{{ role }}</span>
+    <div class="sidebar__profile">
+        <img src="richard.jpeg" alt="Richard Burman" class="avatar" />
+        <div class="profile-info">
+            <span class="profile-name">{{ name }}</span>
+            <span class="profile-role">{{ role }}</span>
+        </div>
+
+        <button class="burger" (click)="toggleMenu()" aria-label="Toggle menu">
+            @if (isMenuOpen) {
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+            </svg>
+            } @else {
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+            }
+        </button>
+
+        <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle dark mode">
+            @if (themeService.isDarkMode) {
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4" />
+                <path
+                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            } @else {
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+            }
+        </button>
     </div>
 
-    <button class="burger" (click)="toggleMenu()" aria-label="Toggle menu">
-      @if (isMenuOpen) {
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      } @else {
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-      }
-    </button>
-  </div>
+    <div class="sidebar__collapsible" [class.sidebar__collapsible--open]="isMenuOpen">
 
-  <div class="sidebar__collapsible" [class.sidebar__collapsible--open]="isMenuOpen">
+        <div class="sidebar__divider"></div>
 
-    <div class="sidebar__divider"></div>
+        <nav class="sidebar__nav">
+            @for (link of navLinks; track link.label) {
+            <a [href]="link.href"
+   class="nav-item"
+   [class.nav-item--active]="activeLink === link.href"
+   (click)="setActive(link.href)">
 
-    <nav class="sidebar__nav">
-      @for (link of navLinks; track link.label) {
-        <a [href]="link.href"
-           class="nav-item"
-           [class.nav-item--active]="link.active"
-           (click)="closeMenu()">
+                @if (link.icon === 'home') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                }
+                @if (link.icon === 'user') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+                }
+                @if (link.icon === 'mail') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                }
+                @if (link.icon === 'folder') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+                </svg>
+                }
 
-          @if (link.icon === 'home') {
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          }
-          @if (link.icon === 'user') {
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          }
-          @if (link.icon === 'mail') {
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          }
-          @if (link.icon === 'folder') {
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-          }
+                <span>{{ link.label }}</span>
 
-          <span>{{ link.label }}</span>
+            </a>
+            }
+        </nav>
 
-        </a>
-      }
-    </nav>
+        <div class="sidebar__divider"></div>
 
-    <div class="sidebar__divider"></div>
+        <div class="sidebar__section-label">Connect</div>
 
-    <div class="sidebar__section-label">Connect</div>
+        <div class="sidebar__social">
+            @for (link of socialLinks; track link.label) {
+            <a [href]="link.href" target="_blank" class="social-item">
+                <span>{{ link.label }}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                </svg>
+            </a>
+            }
+        </div>
 
-    <div class="sidebar__social">
-      @for (link of socialLinks; track link.label) {
-        <a [href]="link.href" target="_blank" class="social-item">
-          <span>{{ link.label }}</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-        </a>
-      }
     </div>
-
-  </div>
 
 </div>

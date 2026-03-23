@@ -94,11 +94,13 @@
 
 .btn-primary {
   background: var(--text-primary);
-  color: #fff;
+  color: var(--bg);
   border-color: var(--text-primary);
 
   &:hover {
-    background: #2a2a28;
+    background: var(--text-secondary);
+    border-color: var(--text-secondary);
+    color: var(--bg);
     transform: translateY(-1px);
   }
 }

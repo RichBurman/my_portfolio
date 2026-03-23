@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Theme } from '../../services/theme';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,22 +9,33 @@ import { Component } from '@angular/core';
 })
 export class Sidebar {
 
+  themeService = inject(Theme);
+
   isMenuOpen = false;
 
   name = 'Richard Burman';
   role = 'Software Engineer';
 
-  navLinks = [
-    { label: 'Home', icon: 'home', href: '#home', active: true},
-    { label: 'About', icon: 'user', href: '#about', active: false},
-    { label: 'Projects', icon: 'folder', href: '#projects', active: false},
-    { label: 'Contact', icon: 'mail', href: '#contact', active: false},
-  ];
+  activeLink = '#home';
+
+
+
+ navLinks = [
+  { label: 'Home',     icon: 'home',   href: '#home' },
+  { label: 'About',    icon: 'user',   href: '#about' },
+  { label: 'Projects', icon: 'folder', href: '#projects' },
+  { label: 'Contact',  icon: 'mail',   href: '#contact' },
+];
 
   socialLinks = [
   { label: 'GitHub',   href: 'https://github.com/RichBurman' },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/richard-burman123' },
 ];
+
+setActive(href: string) {
+  this.activeLink = href;
+  this.closeMenu();
+}
 
 toggleMenu() {
   this.isMenuOpen = !this.isMenuOpen;
@@ -31,5 +43,9 @@ toggleMenu() {
 
 closeMenu() {
   this.isMenuOpen = false;
+}
+
+toggleTheme() {
+  this.themeService.toggleTheme();
 }
 }

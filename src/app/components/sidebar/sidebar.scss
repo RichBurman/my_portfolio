@@ -75,11 +75,11 @@
     color: var(--text-primary);
   }
 
-    &--active {
-    background: #f0f0ee;
-    color: var(--text-primary);
-    font-weight: 600;
-  }
+   &--active {
+  background: var(--surface-alt);
+  color: var(--text-primary);
+  font-weight: 600;
+}
 }
 
 .sidebar__section-label {
@@ -179,5 +179,23 @@
   .sidebar__social {
     display: flex;
     flex-direction: column;
+  }
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  padding: 6px;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+
+  &:hover {
+    background: var(--surface-alt);
+    color: var(--text-primary);
   }
 }
