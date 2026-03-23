@@ -123,3 +123,49 @@
   object-position: center top;
   display: block;
 }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 -40px;
+  border-top: 1px solid var(--border);
+}
+
+.stat {
+  padding: 22px 28px;
+  border-right: 1px solid var(--border);
+  transition: background var(--transition);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &:hover {
+    background: #fafaf8;
+  }
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.stat-detail {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
