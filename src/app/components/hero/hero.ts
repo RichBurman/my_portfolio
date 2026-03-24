@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './hero.scss',
 })
 export class Hero {
-  email = 'rich22640@gmail.com';
+  email = 'richardburmandev@gmail.com';
   githubUrl = 'https://github.com/RichBurman';
   linkedinUrl = 'https://linkedin.com/in/richard-burman123';
   isOpenToWork = true;

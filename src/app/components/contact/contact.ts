@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './contact.scss',
 })
 export class Contact {
-  email = 'rich226402@gmail.com';
+  email = 'richardburmandev@gmail.com';
 subject = 'Frontend%20Developer%20Opportunity';
 
 links = [
