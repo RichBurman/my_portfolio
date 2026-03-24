@@ -26,14 +26,14 @@
       <h3 class="subsection-title">Technical Skills</h3>
       <div class="skill-groups">
         @for (group of skills; track group.category) {
-          <div class="skill-group">
-            <span class="skill-category">{{ group.category }}</span>
-            <div class="chip-row">
-              @for (item of group.items; track item) {
-                <span class="chip">{{ item }}</span>
-              }
-            </div>
+        <div class="skill-group">
+          <span class="skill-category">{{ group.category }}</span>
+          <div class="chip-row">
+            @for (item of group.items; track item) {
+            <span class="chip">{{ item }}</span>
+            }
           </div>
+        </div>
         }
       </div>
     </div>
@@ -42,16 +42,27 @@
       <h3 class="subsection-title">Certifications</h3>
       <div class="cert-list">
         @for (cert of certifications; track cert.name) {
-          <div class="cert-item">
-            <div class="cert-star">
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <div>
-              <div class="cert-name">{{ cert.name }}</div>
-              <div class="cert-issuer">{{ cert.issuer }}</div>
-            </div>
+        <div class="cert-item">
+          <div class="cert-star">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
           </div>
+          <div>
+            <div class="cert-name">{{ cert.name }}</div>
+            <div class="cert-issuer">{{ cert.issuer }}</div>
+          </div>
+        </div>
         }
+        <div class="cert-badges">
+          <a href="https://certificates.dev/angular/certificates/a0605b4b-4224-4685-ab63-6cec2fe3f31e" target="_blank">
+            <img
+              src="https://img.shields.io/badge/Angular_Certified-Junior-E040FB?style=for-the-badge&logo=angular&logoColor=white&labelColor=7B1FA2"
+              alt="Angular Junior Certificate" />
+          </a>
+        </div>
       </div>
     </div>
 

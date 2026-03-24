@@ -209,3 +209,17 @@
     }
   }
 }
+
+.cert-badge {
+  display: inline-block;
+  margin-bottom: 16px;
+  transition: opacity var(--transition);
+
+  img {
+    height: 28px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

@@ -1,18 +1,24 @@
 <section class="hero-card" id="home">
-    <div class="hero-status">
-        @if (isOpenToWork) {
-            <span class="status-badge">
-                <span class="status-dot"></span>
-                Open to opportunities
-            </span>
-        }
-        <span class="status-date">as of {{ currentDate }}</span>
-    </div>
+  <div class="hero-status">
+    @if (isOpenToWork) {
+    <span class="status-badge">
+      <span class="status-dot"></span>
+      Open to opportunities
+    </span>
+    }
+    <span class="status-date">as of {{ currentDate }}</span>
+  </div>
 
-     <div class="hero-top">
+  <div class="hero-top">
     <div class="hero-text">
       <h1 class="hero-name">Hey, I'm Richard</h1>
       <p class="hero-title">Frontend Developer &amp; Angular Specialist</p>
+      <a href="https://certificates.dev/angular/certificates/a0605b4b-4224-4685-ab63-6cec2fe3f31e" target="_blank"
+        class="cert-badge">
+        <img
+          src="https://img.shields.io/badge/Angular_Certified-Junior-E040FB?style=for-the-badge&logo=angular&logoColor=white&labelColor=7B1FA2"
+          alt="Angular Junior Certificate" />
+      </a>
       <p class="hero-bio">
         Based in the UK with 2 years of commercial experience building Angular
         applications in production. Passionate about clean code, great UI,
@@ -34,13 +40,13 @@
     </div>
   </div>
 
-    <div class="hero-stats">
+  <div class="hero-stats">
     @for (stat of stats; track stat.label) {
-      <div class="stat">
-        <span class="stat-value">{{ stat.value }}</span>
-        <span class="stat-label">{{ stat.label }}</span>
-        <span class="stat-detail">{{ stat.detail }}</span>
-      </div>
+    <div class="stat">
+      <span class="stat-value">{{ stat.value }}</span>
+      <span class="stat-label">{{ stat.label }}</span>
+      <span class="stat-detail">{{ stat.detail }}</span>
+    </div>
     }
   </div>
 </section>

@@ -156,3 +156,16 @@
     gap: 24px;
   }
 }
+
+.cert-badges {
+  margin-top: 12px;
+
+  img {
+    height: 28px;
+    transition: opacity var(--transition);
+  }
+
+  a:hover img {
+    opacity: 0.8;
+  }
+}
