@@ -5,10 +5,11 @@ import { About } from './components/about/about';
 import { Contact } from './components/contact/contact';
 import { Projects } from './components/projects/projects';
 import { Experience } from './components/experience/experience';
+import { GithubComponent } from './components/github/github';
 
 @Component({
   selector: 'app-root',
-  imports: [Sidebar, Hero, About, Contact, Projects, Experience],
+  imports: [Sidebar, Hero, About, Contact, Projects, Experience, GithubComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

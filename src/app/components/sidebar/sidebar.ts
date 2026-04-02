@@ -24,6 +24,7 @@ export class Sidebar {
     { label: 'Home', icon: 'home', href: '#home' },
     { label: 'About', icon: 'user', href: '#about' },
     { label: 'Experience', icon: 'briefcase', href: '#experience' },
+    { label: 'GitHub', icon: 'github', href: '#github' },
     { label: 'Projects', icon: 'folder', href: '#projects' },
     { label: 'Contact', icon: 'mail', href: '#contact' },
   ];

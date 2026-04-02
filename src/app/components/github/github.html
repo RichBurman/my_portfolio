@@ -1,0 +1,58 @@
+<section class="github-card" id="github">
+
+  <h2 class="section-title">GitHub Activity</h2>
+
+  @if (loading) {
+    <div class="github-loading">
+      <p>Loading GitHub data...</p>
+    </div>
+  }
+
+  @if (error) {
+    <div class="github-error">
+      <p>Unable to load GitHub data right now.</p>
+    </div>
+  }
+
+  @if (!loading && !error && profile) {
+    <div class="github-stats">
+      <div class="stat-box">
+        <span class="stat-box__value">{{ profile.public_repos }}</span>
+        <span class="stat-box__label">Public Repos</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-box__value">{{ profile.followers }}</span>
+        <span class="stat-box__label">Followers</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-box__value">{{ profile.following }}</span>
+        <span class="stat-box__label">Following</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-box__value">{{ profile.public_gists }}</span>
+        <span class="stat-box__label">Gists</span>
+      </div>
+    </div>
+
+    <div class="recent-repos">
+      <h3 class="subsection-title">Recently Updated Repos</h3>
+      <div class="repo-list">
+        @for (repo of repos; track repo.id) {
+          <a [href]="repo.html_url" target="_blank" class="repo-item">
+            <div class="repo-item__info">
+              <span class="repo-item__name">{{ repo.name }}</span>
+              <span class="repo-item__description">{{ repo.description || 'No description' }}</span>
+            </div>
+            <div class="repo-item__meta">
+              @if (repo.language) {
+                <span class="repo-item__language">{{ repo.language }}</span>
+              }
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  }
+
+</section>
