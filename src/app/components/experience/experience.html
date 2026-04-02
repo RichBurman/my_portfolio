@@ -1,0 +1,51 @@
+<section class="experience-card" id="experience">
+
+  <h2 class="section-title">Experience & Education</h2>
+
+  <div class="timeline">
+    @for (role of experience; track role.title) {
+      <div class="timeline-item">
+
+        <div class="timeline-marker">
+          <div class="timeline-dot"></div>
+          <div class="timeline-line"></div>
+        </div>
+
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <div>
+              <h3 class="role-title">{{ role.title }}</h3>
+              <p class="role-company">{{ role.company }}</p>
+            </div>
+            <span class="role-period">{{ role.period }}</span>
+          </div>
+
+          <ul class="role-achievements">
+            @for (achievement of role.achievements; track achievement) {
+              <li>{{ achievement }}</li>
+            }
+          </ul>
+        </div>
+
+      </div>
+    }
+  </div>
+
+  <div class="education-section">
+    <h3 class="subsection-title">Education</h3>
+    <div class="education-list">
+      @for (edu of education; track edu.qualification) {
+        <div class="education-item">
+          <div class="education-info">
+            <span class="education-qualification">{{ edu.qualification }}</span>
+            <span class="education-institution">{{ edu.institution }}</span>
+          </div>
+          @if (edu.year) {
+            <span class="education-year">{{ edu.year }}</span>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+</section>
