@@ -71,7 +71,7 @@
   font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 400;
-  color: var(--text-primary);
+  color: #16a34a;
   line-height: 1;
   letter-spacing: -0.02em;
 }
@@ -148,4 +148,34 @@
   border: 1px solid var(--border);
   border-radius: 100px;
   padding: 2px 9px;
+}
+
+.repo-item__language--TypeScript {
+  background: #e8f0fe;
+  color: #1a56db;
+  border-color: #c3d4fb;
+}
+
+.repo-item__language--JavaScript {
+  background: #fef9c3;
+  color: #854d0e;
+  border-color: #fde047;
+}
+
+.repo-item__language--SCSS {
+  background: #fce7f3;
+  color: #9d174d;
+  border-color: #f9a8d4;
+}
+
+.repo-item__language--HTML {
+  background: #fff0e8;
+  color: #c2410c;
+  border-color: #fdba74;
+}
+
+.repo-item__language--Python {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
 }
