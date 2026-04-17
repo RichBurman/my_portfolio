@@ -24,7 +24,7 @@ export class Experience {
   },
   {
     title: 'Physical Education Teacher & PGCE Mentor',
-    company: 'St Edmunds Catholic School, Kent',
+    company: 'Secondary School',
     period: '2018 — 2023',
     current: false,
     achievements: [
